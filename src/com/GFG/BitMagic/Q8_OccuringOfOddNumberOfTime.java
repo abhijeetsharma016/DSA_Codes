@@ -1,3 +1,4 @@
+//int this question we have to find the number which is occurring odd number of times in an array
 package com.GFG.BitMagic;
 
 public class Q8_OccuringOfOddNumberOfTime {
