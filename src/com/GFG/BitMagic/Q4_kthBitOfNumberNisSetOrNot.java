@@ -1,7 +1,7 @@
 /*
 //Using left shift operator
 // Java program to check if k-th bit of a given number is set or not
-package com.GFG.BitMagic;
+package com.Q10_PowerSetUsingBitwise.BitMagic;
 class Q4_kthBitOfNumberNisSetOrNot {
 	public static void isKthBitSet(int n, int k)
 	{

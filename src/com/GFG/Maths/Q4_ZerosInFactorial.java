@@ -1,5 +1,5 @@
 /*
-package com.GFG.Maths;
+package com.Q10_PowerSetUsingBitwise.Maths;
 
 import java.util.Scanner;
 

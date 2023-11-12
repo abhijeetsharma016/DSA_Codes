@@ -1,6 +1,6 @@
 // Solving with 2 arrays, Time complexity O(n), Space complexity O(n)
 /*
-package com.GFG.Maths;
+package com.Q10_PowerSetUsingBitwise.Maths;
 import java.util.Arrays;
 import java.util.Scanner;
 public class Palandrome {

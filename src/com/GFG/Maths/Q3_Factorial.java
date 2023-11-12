@@ -1,7 +1,7 @@
 /*
 
 //Solving with recurssion: Time complexity O(n) space complexity O(n);
-package com.GFG.Maths;
+package com.Q10_PowerSetUsingBitwise.Maths;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 class fact {
