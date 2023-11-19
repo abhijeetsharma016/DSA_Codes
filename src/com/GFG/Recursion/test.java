@@ -6,20 +6,21 @@ public class test {
     public static void main(String[] args) {
         System.out.println(powerSet("ABC"));
     }
-        public static ArrayList<String> set(String s, String crr, int i){
-            ArrayList<String> a = new ArrayList();
+        public static void set(String s ,ArrayList<String>a , String crr, int i){
+
             if(i==s.length()){
                 a.add(crr);
-                return a;
+                return;
             }
-            set(s,crr,++i);
-            set(s,crr+s.charAt(i),++i);
-            return a;
+            set(s,a,crr,i+1);
+            set(s,a,crr+s.charAt(i),i+1);
 
         }
         //Function to return the lexicographically sorted power-set of the string.
         static ArrayList<String> powerSet(String s)
         {
-            return(set(s,"",0));
+            ArrayList<String> a = new ArrayList();
+            set(s, a,"",0);
+            return a;
         }
     }
