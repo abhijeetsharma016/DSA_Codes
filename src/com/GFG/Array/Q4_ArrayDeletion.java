@@ -3,7 +3,7 @@ package com.GFG.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ArrayDeletion {
+public class Q4_ArrayDeletion {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

@@ -5,7 +5,7 @@ public class josephusProblem {
         if(n==0){
             return 0;
         }
-        return (josephus(n-1,k)+k-1)%n+1;//k-1 becausethe counting starts with person holding the knife,
+        return (josephus(n-1,k)+k-1)%n+1;//k-1 because the counting starts with person holding the knife,
         // n+1 because we start index from 1
     }
 
