@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 //Our Task: Given a binary array, we need to convert this array into an array that either contains all 1s or all 0s.
 // We need to do it using the minimum number of group flips.
-public class Q17_MinimumConsicutiveFlips {
+public class Q21_MinimumConsicutiveFlips {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of elements: ");
