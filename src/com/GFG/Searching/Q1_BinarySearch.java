@@ -22,7 +22,7 @@ public class Q1_BinarySearch {
     public static int findElement(int[] arr, int size, int element){
         int low = 0;
         int high = size-1;
-        while(low<high){
+        while(low<=high){
             int mid = (low+high)/2;
             if(arr[mid]==element){
                 return mid;
