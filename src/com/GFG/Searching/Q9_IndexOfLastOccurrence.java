@@ -27,7 +27,7 @@ public class Q9_IndexOfLastOccurrence {
             if(arr[mid]==element &&(mid==size-1 || arr[mid+1]!=arr[mid])){
                 return mid;
             }
-            if(arr[mid]<element || (mid!=size-1 && arr[mid+1]==arr[mid])){
+            if(arr[mid]<element || (mid!=size-1 && arr[mid+1]==element)){
                 l = mid+1;
             }
             else{
