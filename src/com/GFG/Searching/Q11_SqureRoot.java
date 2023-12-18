@@ -1,7 +1,7 @@
 package com.GFG.Searching;
 
 // A Java program to find floor(sqrt(x)
-public class Q10_SqureRoot {
+public class Q11_SqureRoot {
     public static int floorSqrt(int x)
     {
         // Base Cases

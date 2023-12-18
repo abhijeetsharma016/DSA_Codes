@@ -2,14 +2,11 @@ package com.GFG.Searching;
 
 // Java code to implement the approach
 
-import java.io.*;
-import java.util.*;
-
 // Java program to demonstrate working of
 // an algorithm that finds an element in an
 // array of infinite size
 
-public class Q11_SearchingInInfiniteSizeArray {
+public class Q12_SearchingInInfiniteSizeArray {
 
     static int findPos(int[] arr, int target)
     {
