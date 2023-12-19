@@ -6,62 +6,49 @@ package com.GFG.Searching;
 // an algorithm that finds an element in an
 // array of infinite size
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Q12_SearchingInInfiniteSizeArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements: ");//asking for size just to ease on taking input not using it
+        int size = sc.nextInt();
+        int[] arr = new int[size];
 
-    static int findPos(int[] arr, int target)
-    {
-        // first find the range
-        // first start with a box of size 2
-        int start = 0;
-        int end = 1;
-
-        // condition for the target to lie in the range
-        while (target > arr[end]) {
-            int temp = end + 1; // this is my new start
-            // double the box value
-            // end = previous end + sizeofbox*2
-            end = end + (end - start + 1) * 2;
-            start = temp;
+        for(int i = 0; i<size; i++){
+            System.out.print("Enter the " + (i+1) + " element: ");
+            arr[i] = sc.nextInt();
         }
-        return binarySearch(arr, target, start, end);
+        System.out.println(Arrays.toString(arr));
+        System.out.print("Enter the element to be searched: ");
+        int element = sc.nextInt();
+        System.out.println("element found at: " + findArrayRange(arr,element));
     }
-    static int binarySearch(int[] arr, int target,
-                            int start, int end)
-    {
-        while (start <= end) {
-            // find the middle element
-            //		 int mid = (start + end) / 2; //
-            //		 might be possible that (start +
-            //		 end) exceeds the range of int in
-            //		 java
-            int mid = start + (end - start) / 2;
-
-            if (target < arr[mid]) {
-                end = mid - 1;
-            }
-            else if (target > arr[mid]) {
-                start = mid + 1;
-            }
-            else {
-                // ans found
+    public static int searchingInInfiniteArray(int[] arr, int element,int l,int r){
+        while(l<=r){
+            int mid = (l+r)/2;
+            if(arr[mid]==element){
                 return mid;
+            }
+            else if(arr[mid]<element){
+                l = mid+1;
+            }
+            else{
+                r = mid-1;
             }
         }
         return -1;
     }
 
-    // Driver code
-    public static void main(String[] args)
-    {
-        int[] arr = { 3, 5, 7, 9, 10, 90,
-                100, 130, 140, 160, 170 };
-        int target = 10;
-        // Function call
-        int ans = findPos(arr, target);
-        if (ans == -1)
-            System.out.println("Element not found");
-        else
-            System.out.println("Element found at index "
-                    + ans);
+    public static int findArrayRange(int[] arr, int element) {
+        int l= 0;int r =1;
+        int val = arr[0];
+        while (val < element){
+            l = r;
+            r = 2*r;
+            val = arr[r];
+        }
+        return searchingInInfiniteArray(arr,element,l,r);
     }
 }
