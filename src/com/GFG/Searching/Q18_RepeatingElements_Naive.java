@@ -25,6 +25,6 @@ public class Q18_RepeatingElements_Naive {
             }
             BoolArray[arr[i]]= true;
         }
-        return -11;
+        return -1;
     }
 }
