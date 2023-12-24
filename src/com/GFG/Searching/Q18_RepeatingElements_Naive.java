@@ -2,7 +2,7 @@ package com.GFG.Searching;
 
 import java.util.Arrays;
 import java.util.Scanner;
-//This is a Naive method to find the repeating element in an array
+//This is a Naive method to find the repeating element in an unsorted - array
 public class Q18_RepeatingElements_Naive {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
