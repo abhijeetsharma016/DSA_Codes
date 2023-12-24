@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Q18_RepeatingElements_Naive {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of elements: ");//asking for size just to ease on taking input not using it
+        System.out.println("Enter the number of elements: ");
         int size = sc.nextInt();
         int[] arr = new int[size];
 
@@ -18,7 +18,7 @@ public class Q18_RepeatingElements_Naive {
         System.out.println(findRepeatingElements(arr, size));
     }
     public static int findRepeatingElements(int[] arr, int size){
-        Boolean[] BoolArray = new Boolean[1000000];
+        boolean[] BoolArray = new boolean[size]; // not Boolean as it may give null pointer exception
         for(int i = 0; i<size;i++){
             if(BoolArray[arr[i]]){
                 return arr[i];
