@@ -3,7 +3,7 @@ package com.GFG.Searching;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Q19_AllocatingMinimumPages_Naive {
+public class Q20_AllocatingMinimumPages_Naive {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of elements: ");
