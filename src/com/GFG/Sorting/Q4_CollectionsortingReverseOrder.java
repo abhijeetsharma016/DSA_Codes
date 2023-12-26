@@ -2,7 +2,7 @@ package com.GFG.Sorting;
 //We cant use Array.sort in list type variables
 import java.util.*;
 
-public class Q4_Collectionsorting
+public class Q4_CollectionsortingReverseOrder
 {
     public static void main(String[] args)
     {
