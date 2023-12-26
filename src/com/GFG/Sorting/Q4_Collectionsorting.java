@@ -16,11 +16,12 @@ public class Q4_Collectionsorting
 
         /* Collections.sort method is sorting the
         elements of ArrayList in ascending order. */
-        Collections.sort(al);
+        Collections.sort(al,Collections.reverseOrder());
 
 
         // Let us print the sorted list
         System.out.println("List after the use of" +
                 " Collection.sort() :\n" + al);
+
     }
 }
