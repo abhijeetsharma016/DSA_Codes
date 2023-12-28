@@ -15,13 +15,13 @@ class MySort implements Comparator<Q3_Point>{
         return a.x - b.x;
     }
 }
-public class Q3_ComparatorInterface {
+public class Q3_ComparatorInterfaceArraySort {
     public static void main(String[] args) {
         Q3_Point[] arr = {new Q3_Point(10, 20), new Q3_Point(3, 12), new Q3_Point(5, 7)};
         Arrays.sort(arr, new MySort());
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i].x + " " + arr[i].y);
         }
-        System.out.println(Arrays.toString(arr));//this will give id cant use it
+        System.out.println(Arrays.toString(arr));//this will give object id cant use it
     }
 }
