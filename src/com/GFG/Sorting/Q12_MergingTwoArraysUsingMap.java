@@ -5,7 +5,7 @@ import java.util.TreeMap;
 
 public class Q12_MergingTwoArraysUsingMap {
     public static void main(String[] args) {
-        int a[] = {1, 3, 5, 7}, b[] = {1, 4, 6, 8};
+        int a[] = {1, 1, 3, 5, 7}, b[] = {1, 4, 6, 8};
         int size = a.length;
         int size1 = b.length;
 
