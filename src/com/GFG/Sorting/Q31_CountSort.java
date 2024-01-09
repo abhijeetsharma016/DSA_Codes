@@ -1,4 +1,4 @@
-package com.GFG;
+package com.GFG.Sorting;
 
 // time complexity is n+k for small values, but may grow exponentially for larger values hence we use count sort as subroutine in
 // Radix sort

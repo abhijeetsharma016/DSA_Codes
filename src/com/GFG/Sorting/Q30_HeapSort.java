@@ -1,4 +1,4 @@
-package com.GFG;
+package com.GFG.Sorting;
 
 //Quick Sort is better in practice hence they are used more
 public class Q30_HeapSort {
