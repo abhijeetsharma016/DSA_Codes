@@ -1,5 +1,6 @@
 package com.GFG;
 
+//Quick Sort is better in practice hence they are used more
 public class Q30_HeapSort {
     public void buildheap(int arr[],int n){
         for (int i = n / 2 - 1; i >= 0; i--)
