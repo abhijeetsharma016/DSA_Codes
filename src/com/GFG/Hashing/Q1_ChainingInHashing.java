@@ -30,7 +30,7 @@ class MyHash {
 
     void insert(Integer k) {
         int i = k % Bucket;
-        table.get(i).add(i);
+        table.get(i).add(k);
     }
 
     boolean search(Integer k) {
