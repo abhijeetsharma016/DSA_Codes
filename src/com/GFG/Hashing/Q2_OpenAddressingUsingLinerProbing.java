@@ -12,10 +12,17 @@ public class Q2_OpenAddressingUsingLinerProbing {
         hashTable.display();
 
         System.out.println(hashTable.search(5));
+        hashTable.delete(5);
+        System.out.println(hashTable.search(5));
+        hashTable.display();
+
+
     }
 }
 
 class Hash{
+
+    int location;
     ArrayList <Integer> table;
     int Bucket;
     public Hash(int b){
@@ -49,6 +56,7 @@ class Hash{
     public boolean search(int element) {
         int index = element % Bucket;
         if (table.get(index) == element) {
+            location = index;
             return true;
         } else {
             int originalIndex = index;
@@ -60,6 +68,7 @@ class Hash{
                 return false;
             }
             else {
+                location = index;
                 return true;
             }
         }
@@ -68,6 +77,15 @@ class Hash{
         System.out.println("Hash Table:");
         for (int i = 0; i < Bucket; i++) {
             System.out.println(i + ": " + table.get(i));
+        }
+    }
+
+    public void delete(int element) {
+        if (search(element)) {
+            table.set(location, -1);
+        }
+        else {
+            System.out.println("element don't exist");
         }
     }
 }
