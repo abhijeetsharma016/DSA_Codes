@@ -12,8 +12,12 @@ public class Q4_DoubleHashing {
         myhash.insert(50);
         myhash.insert(60);
         myhash.insert(70);
+        myhash.display();
+        System.out.println(myhash.search(70));
+        myhash.delete(70);
         myhash.insert(80);
         myhash.display();
+        System.out.println(myhash.search(80));
         System.out.println(myhash.search(70));
     }
 }
@@ -33,26 +37,25 @@ class DoubleHashing {
     }
 
     public void insert(int element) {
-        int index = element%Bucket1;
+        int index = element % Bucket1;
         if (myArrayList.get(index) == -1) {
             myArrayList.set(index, element);
-        }
-        else{
-            int original = index;
-            int index2 = element%Bucket2;
-            int hash = (index + index2)%Bucket1;
-            int i = 2;
-            while (myArrayList.get(hash) != -1 && hash != original) {
-                hash = (index + i*index2)%Bucket1;
+        } else {
+            int index2 =  Bucket2 - (element % Bucket2);
+            int hash = (index + index2) % Bucket1;
+            int i = 1;
+            while (myArrayList.get(hash) != -1 && i <= Bucket1) {
                 i++;
+                hash = (index + i * index2) % Bucket1;
             }
-            if (hash == original) {
-                System.out.println("Arraylist full");
+            if (i > Bucket1) {
+                System.out.println("Hash table is full. Unable to insert " + element);
             } else {
                 myArrayList.set(hash, element);
             }
         }
     }
+
 
     public void display() {
         System.out.println("Hash Table:");
@@ -68,25 +71,28 @@ class DoubleHashing {
             return true;
         } else {
             int original = index1;
-            int index2 = element % Bucket2;
+            int index2 =  Bucket2 - (element % Bucket2);
             int hash = (index1 + index2) % Bucket1;
-            int i = 2;
-            while (hash != original && myArrayList.get(hash) != -1) {
-                hash = (index1 + i * index2);
+            int i = 1;
+            while (myArrayList.get(hash)!= -1 && i<=Bucket1 && myArrayList.get(hash)!=element) {
                 i++;
+                hash = (index1 + i * index2) % Bucket1;
             }
-            if (myArrayList.get(hash) == -1) {
-                return false;
-            } else {
+            if (myArrayList.get(hash) == element) {
                 location = hash;
                 return true;
+            } else {
+                return false;
             }
         }
     }
 
     public void delete(int element) {
         if (search(element)) {
-
+            myArrayList.set(location, -1);
+        }
+        else{
+            System.out.println("Element not present");
         }
     }
 }
