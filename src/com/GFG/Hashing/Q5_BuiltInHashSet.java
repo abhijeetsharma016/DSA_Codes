@@ -18,7 +18,7 @@ class Q5_BuiltInHashSet
 
         Iterator<String> i = h.iterator();
         while (i.hasNext()) {
-            System.out.println(i.next() + " ");
+            System.out.print(i.next() + " ");
             //The order of elements printed by the Iterator is determined by the internal implementation of the collection.
             // In the case of a HashSet, the order of elements is not guaranteed to be the same as the order in which they were inserted.
             // The HashSet class does not maintain the order of elements; instead, it uses a hash table to store and
