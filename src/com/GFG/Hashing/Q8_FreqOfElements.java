@@ -1,8 +1,6 @@
 package com.GFG.Hashing;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 public class Q8_FreqOfElements {
     public static void main(String[] args) {
@@ -12,7 +10,7 @@ public class Q8_FreqOfElements {
     }
 
     private static void frequencyNumber(Integer[] arr, int size) {
-        HashMap<Integer, Integer> myHashmap = new HashMap<>();
+        LinkedHashMap<Integer, Integer> myHashmap = new LinkedHashMap<>();
 
         for(int i=0;i<size;i++) {
             if (myHashmap.containsKey(arr[i])) {
