@@ -3,9 +3,8 @@ package com.GFG.Hashing;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
-public class Q11_Group_Anagrams {
+public class Q11_Group_Anagrams_LeetCode {
     public static ArrayList<ArrayList<String>> groupAnagrams(String[] strs) {
         String[] arr = new String[strs.length];
         ArrayList<ArrayList<String>> list = new ArrayList<>();

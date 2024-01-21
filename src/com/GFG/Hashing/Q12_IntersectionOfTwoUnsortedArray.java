@@ -2,7 +2,7 @@ package com.GFG.Hashing;
 
 import java.util.HashSet;
 
-public class Q3_IntersectionOfTwoUnsortedArray {
+public class Q12_IntersectionOfTwoUnsortedArray {
     public static void main(String[] args) {
         int[] arr1 = { 10, 20,30};
         int[] arr2 = {30,20,10,40,50 };
