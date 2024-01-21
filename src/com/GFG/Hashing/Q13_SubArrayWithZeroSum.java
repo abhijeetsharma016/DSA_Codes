@@ -21,6 +21,5 @@ public class Q13_SubArrayWithZeroSum {
             table.add(prefixSum);
         }
         return false;
-
         }
 }
