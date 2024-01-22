@@ -5,7 +5,6 @@ package com.GFG.Hashing;
 // we will explore two distinct approaches: a Naive approach utilizing nested loops, and an Efficient solution employing Hashing .
 
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class Q16_LongestCommonSpanWIthSameSum {
     public static void main(String[] args) {
