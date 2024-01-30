@@ -2,6 +2,10 @@ package com.GFG.Practice;
 
 public class Q999_Rough {
     public static void main(String[] args) {
-        System.out.println((char)(9 + '0'));
+        for(int i=0; i<5;i++){
+            System.out.print("hi" + i);
+            i++;
+
+        }
     }
 }
