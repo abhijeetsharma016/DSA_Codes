@@ -1,6 +1,6 @@
 package com.GFG.String;
 
-public class Q9_PatternSearchingInString {
+public class Q9_PatternSearchingInString_Naive {
     static void patSearchinng(String txt,String pat){
         int m=pat.length();
         int n=txt.length();
