@@ -39,5 +39,9 @@ class Q11_RabinKarpAlgoForSearchingPattern {
 
     }
 
-
+    public static void main(String args[])
+    {   String txt = "GEEKS FOR GEEKS";String pat="GEEK";
+        System.out.print("All index numbers where pattern found: ");
+        RBSearch(pat,txt,4,15);
+    }
 }
