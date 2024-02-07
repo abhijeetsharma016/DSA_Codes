@@ -9,6 +9,7 @@ class Q11_RabinKarpAlgoForSearchingPattern {
     static final int q=101;
     static void RBSearch(String pat,String txt,int M, int N){
 
+
         //Compute (d^(M-1))%q
         int h=1;
         for(int i=1;i<=M-1;i++)
@@ -38,9 +39,5 @@ class Q11_RabinKarpAlgoForSearchingPattern {
 
     }
 
-    public static void main(String args[])
-    {   String txt = "GEEKS FOR GEEKS";String pat="GEEK";
-        System.out.print("All index numbers where pattern found: ");
-        RBSearch(pat,txt,4,15);
-    }
+
 }
