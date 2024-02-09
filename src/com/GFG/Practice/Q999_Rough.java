@@ -5,7 +5,6 @@ public class Q999_Rough {
         for(int i=0; i<5;){
             System.out.print("hi" + i);
             i++;
-
         }
     }
 }
