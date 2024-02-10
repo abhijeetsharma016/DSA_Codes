@@ -5,43 +5,55 @@ import java.io.*;
 import java.lang.*;
 
 class Q11_RabinKarpAlgoForSearchingPattern {
-    static final int d=256;
-    static final int q=101;
+    static final int d=256;// d is the number of characters in
+    // the input alphabet
+    static final int q=101;//q is like hash size(101 is large prime number
     static void RBSearch(String pat,String txt,int M, int N){
-
-
-        //Compute (d^(M-1))%q
-        int h=1;
-        for(int i=1;i<=M-1;i++)
-            h=(h*d)%q;
-
-        //Compute p and to
-        int p=0,t=0;
-        for(int i=0;i<M;i++){
-            p=(p*d+pat.charAt(i))%q;
-            t=(t*d+txt.charAt(i))%q;
+        //take example of changing 123 to 234, so we can do (123 - 100)*10 +4
+        //h is like 100 and d is like 10 for computing hashing
+        int h = 1;
+        int patHash = 0;
+        int txtHash = 0;
+        for(int i =0;i<M-1; i++){
+            h = (h*d)%q;//computing value of h
         }
 
-        for(int i=0;i<=(N-M);i++){
-            //Check for hit
-            if(p==t){
-                boolean flag=true;
-                for(int j=0;j<M;j++)
-                    if(txt.charAt(i+j)!=pat.charAt(j)){flag=false;break;}
-                if(flag==true)System.out.print(i+" ");
+        for(int i=0; i<M;i++){
+            patHash = ((d*patHash)+pat.charAt(i))%q;
+            txtHash = ((d*txtHash)+txt.charAt(i))%q;
+        }
+        for(int i =0; i<=N-M; i++){
+            if(patHash == txtHash){
+                int j;
+                for(j =0; j<M;j++){
+                    if(pat.charAt(j) != txt.charAt(i+j)){
+                        break;
+                    }
+                }
+                if(j==M){
+                    System.out.println("Fount At index: " + i);
+                }
             }
-            //Compute ti+1 using ti
+
+            //calculate next rolling hash
+            //to understand compare it to what we do to convert 123 to 234
             if(i<N-M){
-                t=((d*(t-txt.charAt(i)*h))+txt.charAt(i+M))%q;
-                if(t<0)t=t+q;
+                txtHash = (d * (txtHash - txt.charAt(i) * h) + txt.charAt(i + M)) % q;
+
+                // We might get negative value of t, converting it
+                // to positive
+                if(txtHash<0){
+                    txtHash += q;
+                }
             }
         }
+
 
     }
 
     public static void main(String args[])
     {   String txt = "GEEKS FOR GEEKS";String pat="GEEK";
-        System.out.print("All index numbers where pattern found: ");
+        System.out.println("All index numbers where pattern found: ");
         RBSearch(pat,txt,4,15);
     }
 }
