@@ -1,5 +1,6 @@
 package com.GFG.String;
 
+//LPS = longest proper Suffix
     class Q12_ConstructingLPSArray {
         static void fillLPS(String str, int lps[]){
             int i =1, len = 0;
