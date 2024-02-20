@@ -15,18 +15,23 @@ public class Q6_InsertionAtARandomPosition {
         int pos = sc.nextInt();
         System.out.print("Eneter the data: ");
         int data = sc.nextInt();
-        InsertAtRandomPosition(head, pos, data);
+        head = InsertAtRandomPosition(head, pos, data);
         Node6 temp = head;
         while(temp != null){
             System.out.print(temp.data+ "--> ");
             temp = temp.next;
         }
     }
-    public static void InsertAtRandomPosition(Node6 head, int pos, int data){
+    public static Node6 InsertAtRandomPosition(Node6 head, int pos, int data){
         Node6 newNode = new Node6(data);
         Node6 temp = head;
         Boolean flag = true;
             int count = 0;
+            if(pos == 1){
+                newNode.next = head;
+                head = newNode;
+                return head;
+            }
             while (count != pos - 2) {
                 if(temp == null){
                     System.out.println("position dosen't exist");
@@ -40,6 +45,7 @@ public class Q6_InsertionAtARandomPosition {
                 newNode.next = temp.next;
                 temp.next = newNode;
             }
+            return head;
         }
     }
 class Node6{
