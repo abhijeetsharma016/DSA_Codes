@@ -6,6 +6,6 @@ public class funTest {
     }
     public static int printIt(){
         System.out.println(1);
-        return 2;
+        return 1;
     }
 }
