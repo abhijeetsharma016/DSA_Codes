@@ -48,6 +48,8 @@ public class Q36_IntersectionPointOfTwoLinkedList {
         System.out.print(getIntersectionUsingHashSet(head1, head2));
     }
 
+
+
     public static int getIntersectionUsingHashSet(Node head1, Node head2) {
         HashSet<Node> s = new HashSet<>();
         Node curr = head1;
