@@ -2,18 +2,18 @@ package com.GFG.LinkList;
 
 import java.util.HashSet;
 
-class Node{
+class Node36 {
     int data;
-    Node next;
-    Node(int x){
+    Node36 next;
+    Node36(int x){
         data=x;
         next=null;
     }
 }
 
 public class Q36_IntersectionPointOfTwoLinkedList {
-    public static void printlist(Node head) {
-        Node curr = head;
+    public static void printlist(Node36 head) {
+        Node36 curr = head;
         while (curr != null) {
             System.out.print(curr.data + " ");
             curr = curr.next;
@@ -22,23 +22,23 @@ public class Q36_IntersectionPointOfTwoLinkedList {
     }
 
     public static void main(String[] args){
-        Node newNode;
+        Node36 newNode;
 
-        Node head1 = new Node(10);
+        Node36 head1 = new Node36(10);
 
-        Node head2 = new Node(3);
+        Node36 head2 = new Node36(3);
 
-        newNode = new Node(6);
+        newNode = new Node36(6);
         head2.next = newNode;
 
-        newNode = new Node(9);
+        newNode = new Node36(9);
         head2.next.next = newNode;
 
-        newNode = new Node(15);
+        newNode = new Node36(15);
         head1.next = newNode;
         head2.next.next.next = newNode;
 
-        newNode = new Node(30);
+        newNode = new Node36(30);
         head1.next.next = newNode;
 
         head1.next.next.next = null;
@@ -50,9 +50,9 @@ public class Q36_IntersectionPointOfTwoLinkedList {
 
 
 
-    public static int getIntersectionUsingHashSet(Node head1, Node head2) {
-        HashSet<Node> s = new HashSet<>();
-        Node curr = head1;
+    public static int getIntersectionUsingHashSet(Node36 head1, Node36 head2) {
+        HashSet<Node36> s = new HashSet<>();
+        Node36 curr = head1;
         while(curr!=null){
             s.add(curr);
             curr = curr.next;
