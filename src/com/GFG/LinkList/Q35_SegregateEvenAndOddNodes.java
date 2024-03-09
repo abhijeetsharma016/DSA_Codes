@@ -50,6 +50,7 @@ public class Q35_SegregateEvenAndOddNodes {
         oE.next = null;
         return eS;
     }
+
     public static void printlist(Node35 head) {
         Node35 curr = head;
         while (curr != null) {
