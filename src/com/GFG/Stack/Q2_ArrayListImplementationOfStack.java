@@ -2,7 +2,7 @@ package com.GFG.Stack;
 
 import java.util.ArrayList;
 
-public class Q2_ArrayImplementationUsingArrayList {
+public class Q2_ArrayListImplementationOfStack {
     public static void main(String[] args) {
         MyStack2 s= new MyStack2();
         s.push(5);
