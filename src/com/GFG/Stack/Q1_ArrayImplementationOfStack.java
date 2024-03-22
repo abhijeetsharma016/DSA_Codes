@@ -2,7 +2,7 @@ package com.GFG.Stack;
 
 public class Q1_ArrayImplementationOfStack {
     public static void main(String[] args) {
-        MyStack s = new MyStack(5);
+        MyStack13 s = new MyStack13(5);
         s.push(5);
         s.push(10);
         s.push(20);
