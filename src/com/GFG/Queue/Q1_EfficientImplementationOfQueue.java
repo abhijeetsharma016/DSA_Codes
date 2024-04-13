@@ -1,16 +1,16 @@
 package com.GFG.Queue;
 
 
-import java.util.*;
-        import java.io.*;
-        import java.lang.*;
+import java.lang.*;
 
-class Queue {
+        //we use circular array
+
+class Q1_Queue {
     int front, rear, size;
     int capacity;
     int array[];
 
-    public Queue(int capacity)
+    public Q1_Queue(int capacity)
     {
         this.capacity = capacity;
         front = this.size = 0;
@@ -19,13 +19,13 @@ class Queue {
     }
 
 
-    boolean isFull(Queue queue)
+    boolean isFull(Q1_Queue queue)
     {
         return (queue.size == queue.capacity);
     }
 
 
-    boolean isEmpty(Queue queue)
+    boolean isEmpty(Q1_Queue queue)
     {
         return (queue.size == 0);
     }
@@ -79,7 +79,7 @@ class Queue {
 public class Q1_EfficientImplementationOfQueue {
     public static void main(String[] args)
     {
-        Queue queue = new Queue(1000);
+        Q1_Queue queue = new Q1_Queue(1000);
 
         queue.enqueue(10);
         queue.enqueue(20);
