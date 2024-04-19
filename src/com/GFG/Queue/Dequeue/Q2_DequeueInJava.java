@@ -1,30 +1,35 @@
 package com.GFG.Queue.Dequeue;
 
 import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Iterator;
 
 public class Q2_DequeueInJava {
     public static void main(String[] args){
-        // Creating empty ArrayDeque as Queue
-        ArrayDeque<Integer> ad  = new ArrayDeque<Integer>();
+        Deque<Integer> d = new LinkedList<Integer>();
 
-        // Add items to the ad using offer() at last
-        ad.offer(10);
-        ad.offer(20);
+        // Adds element to front of queue
+        d.addFirst(10);
 
-        // Returns the front of queue, 10
-        System.out.println(ad.peek());
+        // Adds element to end of queue
+        d.addLast(20);
 
-        // Returns and Removes the front of queue, 10
-        System.out.println(ad.poll());
+        // Adds element to front of queue
+        d.addFirst(5);
 
-        // Returns the front of queue, 20
-        System.out.println(ad.peek());
+        // Adds element to end of queue
+        d.addLast(15);
 
-        // Adds 40 to last of queue
-        ad.offer(40);
+        // Traversal using Iterator
+        Iterator it = d.iterator();
+        while(it.hasNext())
+            System.out.print(it.next() + " ");
+        System.out.println();
 
-        // Returns the front of queue, 20
-        System.out.println(ad.peek());
+        // Traversal using for-each
+        for(int x: d)
+            System.out.print(x + " ");
+        System.out.println();
 
     }
 }
