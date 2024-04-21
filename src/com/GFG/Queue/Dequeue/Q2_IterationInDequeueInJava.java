@@ -1,10 +1,10 @@
 package com.GFG.Queue.Dequeue;
 
-import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Iterator;
+import java.util.LinkedList;
 
-public class Q2_DequeueInJava {
+public class Q2_IterationInDequeueInJava {
     public static void main(String[] args){
         Deque<Integer> d = new LinkedList<Integer>();
 
