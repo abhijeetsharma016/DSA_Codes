@@ -3,50 +3,48 @@ package com.GFG.String;
 import java.util.Arrays;
 
 public class Q13_KMP_AlgorithmForSearchingInAString {
-    public static void main(String[] args){
-        String txt = "ababcababaad",pat="ababa";
-        KMP(pat,txt);
-    }
-    public static void KMP(String pat, String txt){
-        int i =0, j =0;
-        int[] lps = new int[pat.length()];
-        FillLps(pat, lps);
-        System.out.println(Arrays.toString(lps));
-        while(i<txt.length()){
-            if(pat.charAt(j) == txt.charAt(j)){
-                i++;
+    public static int[] computePrefixArray(String pattern) {
+        int[] prefixArray = new int[pattern.length()];
+        int j = 0;
+        for (int i = 1; i < pattern.length(); i++) {
+            if (pattern.charAt(i) == pattern.charAt(j)) {
+                prefixArray[i] = j + 1;
                 j++;
-            }
-            if(j==pat.length()){
-                System.out.println("Found at: " + (i - j));
-                j = lps[j-1];
-            }
-            else if(i<txt.length() && pat.charAt(j) != txt.charAt(i)){
-                if(j == 0){
-                    i++;
-                }else{
-                    j = lps[j-1];
-                }
+            } else if (j > 0) {
+                j = prefixArray[j - 1];
+                i--;
+            } else {
+                prefixArray[i] = 0;
             }
         }
+        return prefixArray;
     }
-    public static void FillLps(String pat, int[] lps){
-        int len = 0, i=1;
-        while(i<lps.length){
-            if(pat.charAt(i)==pat.charAt(len)){
-                len++;
-                lps[i] = len;
-                i++;
-            }
-            else{
-                if(len == 0){
-                    lps[i] = 0;
-                    i++;
+
+    public static int KMP(String text, String pattern) {
+        int[] prefixArray = computePrefixArray(pattern);
+        int j = 0;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == pattern.charAt(j)) {
+                if (j == pattern.length() - 1) {
+                    return (i - pattern.length() + 1); // pattern found
                 }
-                else{
-                    len = lps[len-1];
-                }
+                j++;
+            } else if (j > 0) {
+                j = prefixArray[j - 1];
+                i--;
             }
+        }
+        return -1; // pattern not found
+    }
+
+    public static void main(String[] args) {
+        String text = "ABABDABACDABABCABAB";
+        String pattern = "ABABCABAB";
+        int index = KMP(text, pattern);
+        if (index != -1) {
+            System.out.println("Pattern found at index: " + index);
+        } else {
+            System.out.println("Pattern not found in the text.");
         }
     }
 }
